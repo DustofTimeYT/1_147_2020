@@ -8,14 +8,14 @@
 //		return fibonachi(n - 1) + fibonachi(n - 2);
 //		
 //	}
-
-/*int main()
-{
-	for (int i=0; i < 10; i++)
-	{
-		std::cout << fibonachi(i) << "  ";
-	}
-}*/
+//
+///*int main()
+//{
+//	for (int i=0; i < 10; i++)
+//	{
+//		std::cout << fibonachi(i) << "  ";
+//	}
+//}*/
 //#include <iostream>
 //#include <string>
 //using std::string;
@@ -84,43 +84,43 @@ class Weapon
 public:
 	void setSuccessfulShots(int a=0)
 	{
-		if (a > successfulShots) 
+		if ((a > successfulShots)&&(a>=0)) 
 		{
-			successfulShots = successfulShots + a;
+			this->successfulShots = (successfulShots + a);
 		}
 	}
 	void setName(string a)
 	{
-		a = name;
+	this->name=a;
 	}
 	void setCaliber(double a = 0)
 	{
 		if (a >= 0) 
 		{
-			a = caliber;
+			this->caliber=a;
 		}
 	}
 	void setWeight(double a = 0)
 	{
 		if (a >= 0)
 		{
-			a = weight;
+			this->weight=a;
 		}
 	}
 	void setCountry(string a)
 	{
-		a = country;
+		this->country = a;
 	}
 	void setYear(int a = 0)
 	{
 		if (a >= 0)
 		{
-			a = year;
+			 this->year =a;
 		}
 	}
 	void setOwner(string a)
 	{
-		a = owner;
+		this->owner=a;
 	}
 	void getOwner()
 	{
@@ -147,6 +147,7 @@ public:
 		setWeight(weight);
 		setCountry(country);
 		setYear(year);
+		setSuccessfulShots(successfulShots);
 		setOwner(owner);
 	}
 	Weapon(string name, double caliber, string owner):Weapon(name, caliber, 0, "none", 0, 0, owner)
@@ -155,24 +156,26 @@ public:
 
 private:
 	string name;
-	double caliber;
-	double weight;
+	double caliber=0;
+	double weight=0;
 	string country;
-	int year;
-	int	successfulShots;
+	int year=0;
+	int	successfulShots=0;
 	string owner;
 };
 
 int main()
 {
-	Weapon Two("AK47", 7.62, 1400, "Russia", 1940, 10000, "Nikita");
-	Two.getInform();
 	Display();
 	
 }
 
 void Display()
-{
+{	
+	Weapon One("AK47", 7.62, 1400, "Russia", 1940, 10000, "Nikita");
+	One.getInform();
+	int b2 = 0;
+	int a2 = 0;
 	int y = 0;
 	bool z = false;
 	string a;
@@ -182,9 +185,7 @@ void Display()
 	double c = 0;
 	int e = 0;
 	int f = 0;
-	int b2 = 0;
-	int a2 = 0;
-	std::cout << "Name: ";
+	/*std::cout << "Name: ";
 	std::cin >> a;
 	std::cout << "\nCaliber: ";
 	std::cin >> b;
@@ -198,7 +199,7 @@ void Display()
 	std::cin >> f;
 	std::cout << "\nowner: ";
 	std::cin >> g;
-	Weapon One(a, b, c, d, e, f, g);
+	Weapon One(a, b, c, d, e, f, g);*/
 	while (z!=true)
 	{
 	system("cls");
